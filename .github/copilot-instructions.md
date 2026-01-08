@@ -48,7 +48,7 @@ This repository is a small Streamlit application with a local SQLite store. The 
   - Add a DB field: add column SQL in `connection.init_db()` and update repo read/write functions in `vocab_hub/db/`.
 
 - **Dependencies & integration points:**
-  - `streamlit` (UI runtime) and `pandas` (Excel import). See `requirements.txt`.
+  - `streamlit` (UI runtime), `pandas` (Excel import), and `openpyxl` (Excel reading). See `requirements.txt`.
   - SQLite file at `get_db_path()`; packaged apps rely on `get_app_dir()` creating a user-writable folder.
 
 - **Notes for automated changes by AI:**
