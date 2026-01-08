@@ -25,4 +25,10 @@ def main() -> int:
     return stcli.main()
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    if hasattr(sys, "frozen"):
+        # Running as PyInstaller exe: launch Streamlit server
+        raise SystemExit(main())
+    else:
+        # Running normally (e.g., via streamlit run): execute app directly
+        from vocab_hub.app import main
+        main()
